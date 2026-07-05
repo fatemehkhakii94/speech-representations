@@ -1,0 +1,27 @@
+name: speech-repr
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - numpy<2
+  - scipy
+  - pandas
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - pyyaml
+  - tqdm
+  - h5py
+  - pip
+  - pip:
+    - torch>=2.4.0
+    - torchaudio>=2.4.0
+    - transformers>=4.36.0
+    - datasets
+    - librosa
+    - soundfile
+    - praat-parselmouth
+    - pytest

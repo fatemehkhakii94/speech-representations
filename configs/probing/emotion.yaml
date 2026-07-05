@@ -1,0 +1,23 @@
+# Emotion probing on CREMA-D
+property_name: emotion
+num_classes: 6            # happy, sad, angry, neutral, fear, disgust
+level: utterance
+
+model_name: wavlm_large
+features_dir: features/wavlm_large
+layers: null
+
+probe:
+  probe_type: linear
+  hidden_dim: 256
+  dropout: 0.1
+
+training:
+  learning_rate: 0.001
+  batch_size: 256
+  max_epochs: 50
+  patience: 5
+  seed: 42
+
+pooling: mean
+results_dir: results/probing
