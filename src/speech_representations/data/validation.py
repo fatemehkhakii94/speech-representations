@@ -74,7 +74,9 @@ def validate_prepared_data(config: ProjectConfig) -> dict[str, Any]:
             raise ValueError(f"Dataset {dataset_name} contains duplicate IDs")
         missing_files = [record.path for record in records if not Path(record.path).is_file()]
         if missing_files:
-            raise ValueError(f"Dataset {dataset_name} references {len(missing_files)} missing files")
+            raise ValueError(
+                f"Dataset {dataset_name} references {len(missing_files)} missing files"
+            )
         datasets[dataset_name] = records
         dataset_report[dataset_name] = {"records": len(records), "missing_files": 0}
 

@@ -259,9 +259,7 @@ def select_librispeech_cohort(
     cohort = [
         record
         for offset, speaker in enumerate(chosen)
-        for record in _round_robin_cap(
-            by_speaker[speaker], samples_per_speaker, seed + offset
-        )
+        for record in _round_robin_cap(by_speaker[speaker], samples_per_speaker, seed + offset)
     ]
     return sorted(cohort, key=lambda record: record.id)
 

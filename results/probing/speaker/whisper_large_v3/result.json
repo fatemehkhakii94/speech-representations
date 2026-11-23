@@ -1,5 +1,5 @@
 {
-  "fingerprint": "db4f8224c97564dfc37649b233126970b06c6698f5c8cd6bef9b877f6635af3d",
+  "fingerprint": "e5663c4ad0e7f2db0d4e7c8eb8a0f739cad512aa778988b4f1c3ea0869cea8af",
   "kind": "classification",
   "layers": [
     {
@@ -2594,10 +2594,10 @@
       "python": "3.11.18"
     },
     "feature_cache": "artifacts\\features\\whisper_large_v3\\librispeech.h5",
-    "feature_fingerprint": "34d3a7857db60f87e5255d13c4d74857ef2266c2e7e75f28bb5dbc57c89470b2",
-    "git_revision": "d989feaf2c8970a5e3f8367dd1db9f084e486f46",
+    "feature_fingerprint": "80957c501cc6c41f797f58e17b32dd0f3da9cdb4b7ce8c047858b9b6b1ce30f0",
+    "git_revision": "64af58b25cee5e86c81cade20e8937b08975af9f",
     "model_revision": "06f233fe06e710322aca913c1bc4249a0d71fce1",
-    "source_fingerprint": "c6fc6e7fad7ec17a320507bcdb1234049b331023937c7b6c0f071f522086ad5b",
+    "source_fingerprint": "f25866244be5dad8bf5d3d2554f85314d1d0a41c7737ff3d0bbb3c8d5b6bb69b",
     "task_manifest": "data\\manifests\\tasks\\speaker.jsonl"
   },
   "schema_version": 1,

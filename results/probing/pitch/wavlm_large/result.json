@@ -1,5 +1,5 @@
 {
-  "fingerprint": "20c49b007ec2e90a18ba5f947ba907bf5062da3f7d053bfcea8155247fd6291d",
+  "fingerprint": "1cc3592fc2be07e8ca1ed3fe40bbd67005b293530e30815183340433a534ca3e",
   "kind": "regression",
   "layers": [
     {
@@ -1970,10 +1970,10 @@
       "python": "3.11.18"
     },
     "feature_cache": "artifacts\\features\\wavlm_large\\librispeech.h5",
-    "feature_fingerprint": "28d1f6f8caf0beb52959becdd92b3ac41aaa7ed4b2f4c30fe3f29071d73fa1ab",
-    "git_revision": "d989feaf2c8970a5e3f8367dd1db9f084e486f46",
+    "feature_fingerprint": "5a052c65d57046ad735d59f5e6033f103a6c96ab4f7cfc9c9c450326920c91b9",
+    "git_revision": "64af58b25cee5e86c81cade20e8937b08975af9f",
     "model_revision": "c1423ed94bb01d80a3f5ce5bc39f6026a0f4828c",
-    "source_fingerprint": "c6fc6e7fad7ec17a320507bcdb1234049b331023937c7b6c0f071f522086ad5b",
+    "source_fingerprint": "f25866244be5dad8bf5d3d2554f85314d1d0a41c7737ff3d0bbb3c8d5b6bb69b",
     "task_manifest": "data\\manifests\\tasks\\pitch.jsonl"
   },
   "schema_version": 1,

@@ -1,5 +1,5 @@
 {
-  "fingerprint": "26189d0fb3a9e5a3f851b345c08b818a23dd71eced6bf4bfb38f6a67597af94c",
+  "fingerprint": "073fede3a8ffc6df8a15d9772be18651f8a4bd8694cb0ca1831aaa537542d889",
   "kind": "classification",
   "layers": [
     {
@@ -2594,10 +2594,10 @@
       "python": "3.11.18"
     },
     "feature_cache": "artifacts\\features\\whisper_large_v3\\noise.h5",
-    "feature_fingerprint": "23b3c21fe2a83aecbb3af88bb288f5f8e9f4bc872355cafb601dd3ffd4aa8835",
-    "git_revision": "d989feaf2c8970a5e3f8367dd1db9f084e486f46",
+    "feature_fingerprint": "c2cdfebfa6fec038b70cd47f3c4757269da3985be0efdf2d67f01163471a5639",
+    "git_revision": "64af58b25cee5e86c81cade20e8937b08975af9f",
     "model_revision": "06f233fe06e710322aca913c1bc4249a0d71fce1",
-    "source_fingerprint": "c6fc6e7fad7ec17a320507bcdb1234049b331023937c7b6c0f071f522086ad5b",
+    "source_fingerprint": "f25866244be5dad8bf5d3d2554f85314d1d0a41c7737ff3d0bbb3c8d5b6bb69b",
     "task_manifest": "data\\manifests\\tasks\\noise.jsonl"
   },
   "schema_version": 1,

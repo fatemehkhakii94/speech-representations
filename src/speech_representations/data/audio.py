@@ -7,11 +7,12 @@ from pathlib import Path
 import torch
 import torchaudio
 
-
 SAMPLE_RATE = 16_000
 
 
-def load_audio(path: str | Path, sample_rate: int = SAMPLE_RATE, normalize: bool = True) -> torch.Tensor:
+def load_audio(
+    path: str | Path, sample_rate: int = SAMPLE_RATE, normalize: bool = True
+) -> torch.Tensor:
     waveform, source_rate = torchaudio.load(str(path))
     if waveform.shape[0] > 1:
         waveform = waveform.mean(dim=0, keepdim=True)
@@ -48,4 +49,3 @@ def measured_snr_db(clean: torch.Tensor, mixed: torch.Tensor) -> float:
     residual = mixed - clean
     ratio = clean.square().mean().clamp_min(1e-12) / residual.square().mean().clamp_min(1e-12)
     return float(10.0 * torch.log10(ratio))
-

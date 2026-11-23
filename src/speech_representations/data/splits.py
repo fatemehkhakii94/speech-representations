@@ -31,7 +31,9 @@ def assign_groups(
         n_val = 1
     assignments: dict[T, str] = {}
     for index, group in enumerate(order.tolist()):
-        assignments[group] = "train" if index < n_train else "val" if index < n_train + n_val else "test"
+        assignments[group] = (
+            "train" if index < n_train else "val" if index < n_train + n_val else "test"
+        )
     return assignments
 
 
@@ -40,7 +42,9 @@ def assign_within_class_groups(
 ) -> dict[tuple[T, Hashable], str]:
     """Split groups within every class, preserving all classes in every split."""
     result: dict[tuple[T, Hashable], str] = {}
-    for offset, (class_id, groups) in enumerate(sorted(class_to_groups.items(), key=lambda item: str(item[0]))):
+    for offset, (class_id, groups) in enumerate(
+        sorted(class_to_groups.items(), key=lambda item: str(item[0]))
+    ):
         assignments = assign_groups(groups, seed + offset)
         result.update({(class_id, group): split for group, split in assignments.items()})
     return result
@@ -52,5 +56,6 @@ def assert_group_disjoint(groups: Sequence[Hashable], splits: Sequence[str]) -> 
         observed[group].add(split)
     leaked = [group for group, values in observed.items() if len(values) > 1]
     if leaked:
-        raise ValueError(f"Found {len(leaked)} groups spanning multiple splits; examples: {leaked[:5]}")
-
+        raise ValueError(
+            f"Found {len(leaked)} groups spanning multiple splits; examples: {leaked[:5]}"
+        )

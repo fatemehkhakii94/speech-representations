@@ -3,9 +3,10 @@
 from __future__ import annotations
 
 import json
+from collections.abc import Iterable, Mapping
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
-from typing import Any, Iterable, Mapping
+from typing import Any
 
 
 @dataclass(frozen=True)
@@ -44,4 +45,3 @@ def read_audio_records(path: str | Path) -> list[AudioRecord]:
 
 def read_task_records(path: str | Path) -> list[TaskRecord]:
     return [TaskRecord(**json.loads(line)) for line in Path(path).read_text().splitlines() if line]
-
