@@ -28,6 +28,9 @@ Thumbs.db
 /artifacts/features/
 /artifacts/tmp/
 
+# Locally generated beginner guide
+/output/pdf/speech-representations-beginner-guide.pdf
+
 # Local logs and interrupted downloads
 *.log
 *.part
