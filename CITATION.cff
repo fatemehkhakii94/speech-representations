@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software or its results, please cite it using this metadata."
+title: "Mapping Speech Foundation Model Representations"
+type: software
+authors:
+  - family-names: "Khaki"
+    given-names: "Fatemeh"
+repository-code: "https://github.com/fatemehkhakii94/speech-representations"
+license: MIT
+version: 1.0.0
+date-released: 2026-11-20
+keywords:
+  - speech representation learning
+  - probing
+  - centered kernel alignment
+  - WavLM
+  - HuBERT
+  - Whisper

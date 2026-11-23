@@ -1,0 +1,86 @@
+schema_version: 1
+
+paths:
+  data: data
+  features: artifacts/features
+  runs: results
+  reports: results/figures
+
+runtime:
+  device: auto
+  precision: fp16
+  seed: 42
+  extraction_batch_size: 4
+  probe_batch_size: 256
+  num_workers: 0
+  deterministic: true
+
+analysis:
+  cka_max_samples: 500
+  downstream_model: wavlm_large
+
+models:
+  wavlm_large:
+    display_name: WavLM-Large
+    hub_id: microsoft/wavlm-large
+    revision: c1423ed94bb01d80a3f5ce5bc39f6026a0f4828c
+    architecture: wav2vec2
+    transformer_layers: 24
+    hidden_size: 1024
+  hubert_large:
+    display_name: HuBERT-Large
+    hub_id: facebook/hubert-large-ll60k
+    revision: ff022d095678a2995f3c49bab18a96a9e553f782
+    architecture: wav2vec2
+    transformer_layers: 24
+    hidden_size: 1024
+  whisper_large_v3:
+    display_name: Whisper-Large-v3
+    hub_id: openai/whisper-large-v3
+    revision: 06f233fe06e710322aca913c1bc4249a0d71fce1
+    architecture: whisper
+    transformer_layers: 32
+    hidden_size: 1280
+
+tasks:
+  speaker:
+    display_name: Speaker identity
+    kind: classification
+    dataset: librispeech
+    primary_metric: uar
+    selection_mode: max
+    max_samples_per_speaker: 30
+    min_samples_per_speaker: 10
+    cohort_speakers: 24
+    cohort_samples_per_speaker: 30
+  pitch:
+    display_name: Pitch (F0)
+    kind: regression
+    dataset: librispeech
+    primary_metric: mae
+    selection_mode: min
+  noise:
+    display_name: Acoustic condition
+    kind: classification
+    dataset: noise
+    primary_metric: accuracy
+    selection_mode: max
+    snr_db: 10.0
+    max_source_utterances: 1200
+  emotion:
+    display_name: Emotion
+    kind: classification
+    dataset: cremad
+    primary_metric: uar
+    selection_mode: max
+    max_samples_per_speaker: 24
+
+training:
+  learning_rate: 0.001
+  max_epochs: 50
+  patience: 5
+  probe: linear
+  mlp_hidden_size: 256
+  dropout: 0.1
+  seeds: [13, 42, 77]
+

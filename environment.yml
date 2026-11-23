@@ -1,27 +1,13 @@
 name: speech-repr
 channels:
-  - pytorch
-  - nvidia
   - conda-forge
-  - defaults
+variables:
+  CUBLAS_WORKSPACE_CONFIG: ":4096:8"
 dependencies:
-  - python=3.10
-  - numpy<2
-  - scipy
-  - pandas
-  - matplotlib
-  - seaborn
-  - scikit-learn
-  - pyyaml
-  - tqdm
-  - h5py
-  - pip
+  - python=3.11
+  - pip>=24
   - pip:
-    - torch>=2.4.0
-    - torchaudio>=2.4.0
-    - transformers>=4.36.0
-    - datasets
-    - librosa
-    - soundfile
-    - praat-parselmouth
-    - pytest
+      - --extra-index-url https://download.pytorch.org/whl/cu124
+      - torch==2.6.0+cu124
+      - torchaudio==2.6.0+cu124
+      - -e .[dev]
